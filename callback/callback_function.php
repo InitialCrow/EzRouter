@@ -10,5 +10,9 @@ $func =  array(
 			echo "you change page this dummy test work too PUT A VIEW HERE !";
 			return exit();
 		} ,
+	'testWithParams'=>function(){
+			echo "test with params work damn you are not PUTING VIEW";
+			return exit();
+		} ,
 	);
 
