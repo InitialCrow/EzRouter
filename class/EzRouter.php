@@ -31,6 +31,9 @@ Class EzRouter {
 			}
 			for($i=0; $i<count($url_param); $i++){
 				if(!empty($url_param[$i])){
+
+					$url_param[$i] = preg_replace('/\/(.*)/', '', $url_param[$i]);
+					
 					$url_var[$url_param[$i]]= $url_param_value[$url_param_value_index];
 					$url_param_value_index ++;
 				}
