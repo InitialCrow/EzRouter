@@ -38,13 +38,21 @@ Class EzRouter {
 					$url_param_value_index ++;
 				}
 			}
-			$this->match = $this->uri;
-
+			for($i=0; $i<count($matches); $i++){
+				if(!empty($matches[$i][0]) && $matches[$i][0]==':'){
+					if($matches[$i-1] == $uri[$i-1] ){
+						$this->match = $this->uri;
+						break;
+					}
+				}
+			}
+				
 		}
 		if($this->match === $this->uri){
 			if(!empty($url_var)){
-
+				
 				call_user_func($callback, $url_var);
+				
 			}
 			else{
 				call_user_func($callback);
